@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário</title>
     <style>
+
+        /*Typical Device Breakpoints
+        -------------------------------
+        Pequenas telas: até 600px
+        Celular: de 600pc até 768px
+        Teblet: 768px até 992px
+        Desktop: 992px até 1200px
+        Grandes telas: acima de 1200px
+        */
+
         * {
             margin: 0px;
             padding: 0px;
@@ -58,27 +68,106 @@
             margin-left: 10px;
             margin-top: 6px;
         }
+        
+
+        /*Para tablet*/
+
+        @media screen and (min-width: 768px) and (max-width: 992px) {
+                    
+            body {
+                background-image: url(imagens/background-de-fundo-tablet.webp);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            form {
+                background-color: rgba(128, 128, 128, 0.678);
+                box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.541);
+            }
+
+            hr, h2 {
+                display: none;
+            }
+
+            .impresso {
+                margin: auto;
+                background-color: rgba(128, 128, 128, 0.473);
+                width: 450px;
+                border-radius: 10px;
+                padding: 10px;
+                color: white;
+                text-shadow: 1px 1px 1px black;
+                font-weight: bolder;
+            }
+
+            form:hover {
+                cursor: pointer;
+            }
+        }
+            
+            @media screen and (min-width: 992px) {
+            body {
+                background-image: url(imagens/background-de-fundo-tablet.webp);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            form {
+                margin-left: 20%;
+                float: left;
+                height: 400px;
+                width: 350px;
+                background-color: rgba(128, 128, 128, 0.678);
+                box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.541);
+            }
+
+            .impresso {
+                margin-right: 20%;
+                float: right;
+                height: 400px;
+                width: 350px;
+                background-color: rgba(128, 128, 128, 0.678);
+                border-radius: 10px;
+                padding: 18px;
+                color: white;
+                text-shadow: 1px 1px 1px black;
+                font-weight: bolder;
+            }
+
+            
+            hr, h2 {
+                display: none;
+            }
+
+            form:hover {
+                cursor: pointer;
+            }
+        }
+        
 
     </style>
 </head>
 <body>
     <h1>Responda as perguntas</h1>
-            <form action="cadastro" method="post">
-                <label for="idnome">Nome: <input type="text" id="idnome" required ></label><br><br>
-                <label for="idemail">E-mail: <input type="email"  id="idemail" required></label> <br> <br>
-                <label for="idtel">Telefone: <input type="tel" id="idtel" required ></label> <br> <br>
-                <label for="ididade">Idade: <input type="number" id="ididade" required></label> <br> <br>
-                <input type="submit" value="Enviar" class="botaoEnviar" onclick="enviar() ">
-                <input type="reset" value="Limpar" class="botaoEnviar">
-            </form>
+    <form action="cadastro" method="post">
+        <label for="idnome">Nome: <input type="text" id="idnome" required ></label><br><br>
+        <label for="idemail">E-mail: <input type="email"  id="idemail" required></label> <br> <br>
+        <label for="idtel">Telefone: <input type="tel" id="idtel" required ></label> <br> <br>
+        <label for="ididade">Idade: <input type="number" id="ididade" required></label> <br> <br>
+        <input type="submit" value="Enviar" class="botaoEnviar" onclick="enviar() ">
+        <input type="reset" value="Limpar" class="botaoEnviar">
+    </form>
     
     <hr>
+
     <h2>Impressão de Dados</h2>
-    <div id="resN">Nome: </div>
-    <div id="resE">E-mail: </div>
-    <div id="resT">Telefone: </div>
-    <div id="resI">Idade: </div>
-    <div id="resA">Nasceu em: </div>
+    <div class="impresso">
+        <div id="resN">Nome: </div>
+        <div id="resE">E-mail: </div>
+        <div id="resT">Telefone: </div>
+        <div id="resI">Idade: </div>
+        <div id="resA">Nasceu em: </div>
+    </div>
 
 
     <script>
